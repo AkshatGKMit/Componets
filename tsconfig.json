@@ -20,5 +20,7 @@
       "@theme/*": ["src/theme/*"],
       "@utility/*": ["src/utility/*"]
     }
-  }
+  },
+  "include": ["./src/**/*", "./*.js"],
+  "exclude": ["*.json"]
 }
