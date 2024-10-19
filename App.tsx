@@ -1,9 +1,14 @@
 import React from 'react';
-import { SafeAreaView, Text } from 'react-native';
+import { SafeAreaView } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const App = (): React.JSX.Element => (
   <SafeAreaView>
-    <Text>Custom Components</Text>
+    <Icon
+      name="rocket"
+      size={30}
+      color="#900"
+    />
   </SafeAreaView>
 );
 
