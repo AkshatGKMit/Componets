@@ -4,6 +4,8 @@ import Home from '@screens/home/Home';
 import Profile from '@screens/profile/Profile';
 import { useContext } from 'react';
 import ThemeContext from '@src/contexts/ThemeContext';
+import { Animated, StyleSheet } from 'react-native';
+import BottomTabsHeader from '@src/components/header';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -18,6 +20,7 @@ const Navigator = (): React.JSX.Element => {
         tabBarShowLabel: false,
         tabBarInactiveBackgroundColor: theme.tabBarBGColor,
         tabBarActiveBackgroundColor: theme.tabBarBGColor,
+        header: headerProps => <BottomTabsHeader {...headerProps} />,
       }}
     >
       <BottomTab.Screen

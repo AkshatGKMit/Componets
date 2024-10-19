@@ -3,6 +3,8 @@ declare global {
 
   interface ThemeColors {
     screenColor: string;
+    tabHeaderBGColor: string;
+    tabHeaderTextColor: string;
     tabBarBGColor: string;
     tabBarFocusedColor: string;
     tabBarUnfocusedColor: string;
