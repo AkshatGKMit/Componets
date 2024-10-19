@@ -4,7 +4,7 @@ import globalStyles from '@src/styles/global';
 
 const Profile = () => {
   return (
-    <View style={[globalStyles.screen, globalStyles.flexColumn]}>
+    <View style={[globalStyles().screen, globalStyles().flexColumn]}>
       <Text>Profile</Text>
     </View>
   );
