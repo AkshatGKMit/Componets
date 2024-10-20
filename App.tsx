@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { SafeAreaView, StatusBar, Text, useColorScheme } from 'react-native';
+import { SafeAreaView, StatusBar } from 'react-native';
 import Navigator from '@navigation/Navigator';
 import { NavigationContainer, useTheme } from '@react-navigation/native';
 import globalStyles from '@src/styles/global';
@@ -14,20 +14,21 @@ const App = (): React.JSX.Element => {
 };
 
 const Main = () => {
-  const { theme, isDark } = useContext(ThemeContext);
+  const { isDark } = useContext(ThemeContext);
 
   return (
-    <SafeAreaView style={globalStyles().screen}>
+    <>
       <StatusBar
-        backgroundColor={theme.statusBarBGColor}
-        barStyle={isDark ? 'dark-content' : 'light-content'}
-        translucent
+        backgroundColor={'#000'}
+        barStyle={isDark ? 'light-content' : 'dark-content'}
         animated
       />
-      <NavigationContainer>
-        <Navigator />
-      </NavigationContainer>
-    </SafeAreaView>
+      <SafeAreaView style={globalStyles().screen}>
+        <NavigationContainer>
+          <Navigator />
+        </NavigationContainer>
+      </SafeAreaView>
+    </>
   );
 };
 
