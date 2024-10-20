@@ -1,19 +1,33 @@
-import React from 'react';
-import { SafeAreaView, Text, useColorScheme } from 'react-native';
+import React, { useContext } from 'react';
+import { SafeAreaView, StatusBar, Text, useColorScheme } from 'react-native';
 import Navigator from '@navigation/Navigator';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, useTheme } from '@react-navigation/native';
 import globalStyles from '@src/styles/global';
-import { ThemeContextProvider } from '@src/contexts/ThemeContext';
+import ThemeContext, { ThemeContextProvider } from '@src/contexts/ThemeContext';
 
 const App = (): React.JSX.Element => {
   return (
     <ThemeContextProvider>
-      <SafeAreaView style={globalStyles().screen}>
-        <NavigationContainer>
-          <Navigator />
-        </NavigationContainer>
-      </SafeAreaView>
+      <Main />
     </ThemeContextProvider>
+  );
+};
+
+const Main = () => {
+  const { theme, isDark } = useContext(ThemeContext);
+
+  return (
+    <SafeAreaView style={globalStyles().screen}>
+      <StatusBar
+        backgroundColor={theme.statusBarBGColor}
+        barStyle={isDark ? 'dark-content' : 'light-content'}
+        translucent
+        animated
+      />
+      <NavigationContainer>
+        <Navigator />
+      </NavigationContainer>
+    </SafeAreaView>
   );
 };
 

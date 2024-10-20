@@ -7,6 +7,7 @@ declare global {
 
   interface ThemeCtxProps {
     theme: ThemeColors;
+    isDark: boolean;
     changeTheme: (themeMode: ThemeMode) => void;
   }
 }

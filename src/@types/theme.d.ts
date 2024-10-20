@@ -2,6 +2,7 @@ declare global {
   type ThemeMode = 'light' | 'dark';
 
   interface ThemeColors {
+    statusBarBGColor: string;
     screenColor: string;
     tabHeaderBGColor: string;
     tabHeaderTextColor: string;

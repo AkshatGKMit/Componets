@@ -1,6 +1,30 @@
 const COLORS = {
-  black: '#000000',
-  white: '#ffffff',
+  white: {
+    shade50: '#ffffff',
+    shade100: '#efefef',
+    shade200: '#dcdcdc',
+    shade300: '#bdbdbd',
+    shade400: '#989898',
+    shade500: '#7c7c7c',
+    shade600: '#656565',
+    shade700: '#525252',
+    shade800: '#464646',
+    shade900: '#3d3d3d',
+    shade950: '#292929',
+  },
+  black: {
+    shade50: '#f6f6f6',
+    shade100: '#e7e7e7',
+    shade200: '#d1d1d1',
+    shade300: '#b0b0b0',
+    shade400: '#888888',
+    shade500: '#6d6d6d',
+    shade600: '#5d5d5d',
+    shade700: '#4f4f4f',
+    shade800: '#454545',
+    shade900: '#3d3d3d',
+    shade950: '#000000',
+  },
 };
 
 export const DARK = {
