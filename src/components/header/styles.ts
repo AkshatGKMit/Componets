@@ -15,6 +15,8 @@ const styles = () => {
     },
     heading: {
       color: theme.tabHeaderTextColor,
+      fontSize: 21,
+      fontWeight: '700',
     },
   });
 };

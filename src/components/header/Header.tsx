@@ -6,7 +6,7 @@ import styles from './styles';
 const BottomTabsHeader = ({ layout, navigation, options, route }: BottomTabHeaderProps) => {
   return (
     <View style={[styles().view]}>
-      <Text style={styles().heading}>Header</Text>
+      <Text style={styles().heading}>{route.name}</Text>
     </View>
   );
 };
