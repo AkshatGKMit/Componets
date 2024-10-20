@@ -8,13 +8,13 @@ declare global {
   };
 
   type BottomTabParamList = {
-    Home: undefined;
-    Profile: undefined;
+    Basic: undefined;
+    Advance: undefined;
   };
 
   type MainTabScreenParamList = DrawerScreenProps<DrawerParamList, 'MainTab'>;
   type SettingsScreenParamList = DrawerScreenProps<DrawerParamList, 'Settings'>;
 
-  type HomeScreenParamList = BottomTabBarProps<BottomTabParamList, 'Home'>;
-  type ProfileScreenParamList = BottomTabBarProps<BottomTabParamList, 'Profile'>;
+  type HomeScreenParamList = BottomTabBarProps<BottomTabParamList, 'Basic'>;
+  type ProfileScreenParamList = BottomTabBarProps<BottomTabParamList, 'Advance'>;
 }

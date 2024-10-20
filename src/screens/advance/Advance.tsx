@@ -2,12 +2,12 @@ import { View, Text } from 'react-native';
 import React from 'react';
 import globalStyles from '@src/styles/global';
 
-const Home = () => {
+const Advance = () => {
   return (
     <View style={[globalStyles().screen, globalStyles().flexColumn]}>
-      <Text>Home</Text>
+      <Text>Advance</Text>
     </View>
   );
 };
 
-export default Home;
+export default Advance;
