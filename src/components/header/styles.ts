@@ -12,6 +12,16 @@ const styles = () => {
       backgroundColor: theme.tabHeaderBGColor,
       alignItems: 'center',
       justifyContent: 'center',
+      flexDirection: 'row',
+    },
+    drawerButton: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      bottom: 0,
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingLeft: 10,
     },
     heading: {
       color: theme.tabHeaderTextColor,
