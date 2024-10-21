@@ -1,12 +1,18 @@
-import { View, Text } from 'react-native';
-import React from 'react';
+import { View, DeviceEventEmitter, TouchableWithoutFeedback } from 'react-native';
 import globalStyles from '@src/styles/global';
+import Dropdown from '@src/components/dropdown';
 
 const Basic = () => {
+  const handlePress = () => {
+    DeviceEventEmitter.emit('touch');
+  };
+
   return (
-    <View style={[globalStyles().screen, globalStyles().flexColumn]}>
-      <Text>Basic</Text>
-    </View>
+    <TouchableWithoutFeedback onPress={handlePress}>
+      <View style={[globalStyles().screen, globalStyles().flexColumn]}>
+        <Dropdown />
+      </View>
+    </TouchableWithoutFeedback>
   );
 };
 
