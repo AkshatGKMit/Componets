@@ -6,6 +6,7 @@ import COLORS from '@src/constants/colors';
 import { useContext } from 'react';
 import SettingsContext from '@src/contexts/SettingsContext';
 import TopTabNavigator from './TopTabNavigator';
+import StackNavigator from './StackNavigator';
 
 const Drawer = createDrawerNavigator<DrawerParamList>();
 
@@ -25,6 +26,10 @@ const Navigator = (): React.JSX.Element => {
       <Drawer.Screen
         name="Settings"
         component={Settings}
+      />
+      <Drawer.Screen
+        name="StackScreens"
+        component={StackNavigator}
       />
     </Drawer.Navigator>
   );
