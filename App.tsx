@@ -4,12 +4,15 @@ import Navigator from '@navigation/Navigator';
 import { NavigationContainer, useTheme } from '@react-navigation/native';
 import globalStyles from '@src/styles/global';
 import ThemeContext, { ThemeContextProvider } from '@src/contexts/ThemeContext';
+import { SettingsContextProvider } from '@src/contexts/SettingsContext';
 
 const App = (): React.JSX.Element => {
   return (
-    <ThemeContextProvider>
-      <Main />
-    </ThemeContextProvider>
+    <SettingsContextProvider>
+      <ThemeContextProvider>
+        <Main />
+      </ThemeContextProvider>
+    </SettingsContextProvider>
   );
 };
 

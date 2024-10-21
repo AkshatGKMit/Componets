@@ -10,6 +10,11 @@ declare global {
     isDark: boolean;
     changeTheme: (themeMode: ThemeMode) => void;
   }
+
+  interface SettingsCtxProps {
+    isBottomTab: boolean;
+    changeIsBottomTab: (value: boolean) => void;
+  }
 }
 
 export {};

@@ -1,57 +1,47 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from '@components/icon';
 import Advance from '@src/screens/advance/Advance';
 import { useContext } from 'react';
 import ThemeContext from '@src/contexts/ThemeContext';
-import BottomTabsHeader from '@src/components/header';
 import Basic from '@src/screens/basic/Basic';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
-const BottomTab = createBottomTabNavigator<TabParamList>();
+const TopTab = createMaterialTopTabNavigator<TabParamList>();
 
-const BottomTabNavigator = (): React.JSX.Element => {
+const TopTabNavigator = (): React.JSX.Element => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <BottomTab.Navigator
-      screenOptions={{
-        tabBarHideOnKeyboard: true,
-        freezeOnBlur: true,
-        tabBarShowLabel: false,
-        tabBarInactiveBackgroundColor: theme.tabBarBGColor,
-        tabBarActiveBackgroundColor: theme.tabBarBGColor,
-        header: headerProps => <BottomTabsHeader {...headerProps} />,
-      }}
-    >
-      <BottomTab.Screen
+    <TopTab.Navigator>
+      <TopTab.Screen
         name="Basic"
         component={Basic}
         options={{
-          tabBarIcon: ({ focused, size }) => (
+          tabBarIcon: ({ focused }) => (
             <Icon
               family="FontAwesome"
               name="home"
               color={focused ? theme.tabBarFocusedColor : theme.tabBarUnfocusedColor}
-              size={size}
+              size={25}
             />
           ),
         }}
       />
-      <BottomTab.Screen
+      <TopTab.Screen
         name="Advance"
         component={Advance}
         options={{
-          tabBarIcon: ({ focused, size }) => (
+          tabBarIcon: ({ focused }) => (
             <Icon
               family="Fontisto"
               name="person"
               color={focused ? theme.tabBarFocusedColor : theme.tabBarUnfocusedColor}
-              size={size}
+              size={25}
             />
           ),
         }}
       />
-    </BottomTab.Navigator>
+    </TopTab.Navigator>
   );
 };
 
-export default BottomTabNavigator;
+export default TopTabNavigator;
