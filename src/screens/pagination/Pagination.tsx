@@ -6,7 +6,7 @@ import uuid from 'react-native-uuid';
 import { LIGHT } from '@constants/colors';
 
 const Pagination = () => {
-  const [songs, setSongs] = useState<Song[]>([]);
+  const [songs, setSongs] = useState<Songs>([]);
   const [page, setPage] = useState(0);
   const [loading, setLoading] = useState(true);
   const [hasMoreData, setHasMoreData] = useState(false);
@@ -14,9 +14,10 @@ const Pagination = () => {
   const apiCall = async (p: number) => {
     setLoading(true);
     const response = await ApiCall<SearchSong, SearchSongParams>({
-      url: `https://saavn.dev/api/search/songs?query=Believer`,
+      url: `https://saavn.dev/api/search/songs`,
       method: 'GET',
       params: {
+        query: 'Believer',
         page,
       },
     });
@@ -58,7 +59,7 @@ const Pagination = () => {
                 height={40}
                 width={40}
               />
-              <Text>{item.name}</Text>
+              <Text>{item.name ? item.name : item.title}</Text>
             </View>
           );
         }}

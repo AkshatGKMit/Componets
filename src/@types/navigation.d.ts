@@ -21,4 +21,8 @@ declare global {
   type AdvanceStackScreenNames = keyof typeof Routes.AdvanceStack;
   type RootAdvanceStackScreenParamList = Record<AdvanceStackScreenNames[number], undefined>;
   type AdvanceStackScreenNavigation = NavigationProp<RootAdvanceStackScreenParamList>;
+
+  type DynamicTabScreenNames = keyof typeof Routes.DynamicTabs;
+  type RootDynamicTabScreenParamList = Record<DynamicTabScreenNames[number], undefined>;
+  type DynamicTabScreenNavigation = NavigationProp<RootDynamicTabScreenParamList>;
 }

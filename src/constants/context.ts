@@ -5,3 +5,17 @@ export const defaultThemeContextValues: ThemeCtxProps = {
   changeTheme: () => {},
   isDark: true,
 };
+
+export const defaultDynamicTabContextValues: DynamicTabCtxProps = {
+  globalSearch: {
+    success: false,
+    data: {
+      albums: { results: [] },
+      artists: { results: [] },
+      playlists: { results: [] },
+      songs: { results: [] },
+    },
+  },
+  search: () => {},
+  falseSuccess: () => {},
+};

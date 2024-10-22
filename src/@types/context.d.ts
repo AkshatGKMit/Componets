@@ -15,6 +15,12 @@ declare global {
     isBottomTab: boolean;
     changeIsBottomTab: (value: boolean) => void;
   }
+
+  interface DynamicTabCtxProps {
+    globalSearch: GlobalSearch;
+    search: (text: string) => void;
+    falseSuccess: () => void;
+  }
 }
 
 export {};
