@@ -1,4 +1,4 @@
-import COLORS from '@src/constants/colors';
+import COLORS from '@constants/colors';
 import React from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -41,7 +41,7 @@ const Icon = ({ family, name, color, size, style }: IconProps) => {
     <SelectedIcon
       name={name}
       size={size}
-      color={color ?? COLORS.black}
+      color={color ?? COLORS.black.shade950}
       style={style}
     />
   ) : null;

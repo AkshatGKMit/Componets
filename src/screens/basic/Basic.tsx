@@ -1,5 +1,5 @@
-import Dropdown from '@src/components/dropdown';
-import ScreenView from '@src/components/screenView';
+import Dropdown from '@components/dropdown';
+import ScreenView from '@components/screenView';
 
 const Basic = () => {
   return (

@@ -1,4 +1,4 @@
-import ThemeColors from '@src/themes/themes';
+import ThemeColors from '@themes/themes';
 
 export const defaultThemeContextValues: ThemeCtxProps = {
   theme: ThemeColors.dark,

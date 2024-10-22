@@ -1,9 +1,9 @@
 import { View, Text, Switch } from 'react-native';
 import React, { useContext, useEffect, useState } from 'react';
-import globalStyles from '@src/styles/global';
-import ThemeContext from '@src/contexts/ThemeContext';
+import globalStyles from '@styles/global';
+import ThemeContext from '@contexts/ThemeContext';
 import styles from './styles';
-import SettingsContext from '@src/contexts/SettingsContext';
+import SettingsContext from '@contexts/SettingsContext';
 
 const Settings = () => {
   const { isBottomTab, changeIsBottomTab } = useContext(SettingsContext);

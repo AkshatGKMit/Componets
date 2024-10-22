@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native';
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Page1, Page2, Page3 } from '@src/screens/page/Page';
+import { Page1, Page2, Page3 } from '@screens/page/Page';
 
 const Stack = createNativeStackNavigator<StackParamList>();
 

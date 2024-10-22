@@ -1,4 +1,4 @@
-import COLORS, { DARK, LIGHT } from '@src/constants/colors';
+import COLORS, { DARK, LIGHT } from '@constants/colors';
 
 const Theme: Theme = {
   light: {

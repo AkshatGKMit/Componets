@@ -1,8 +1,8 @@
 import Icon from '@components/icon';
-import Advance from '@src/screens/advance/Advance';
+import Advance from '@screens/advance/Advance';
 import { useContext } from 'react';
-import ThemeContext from '@src/contexts/ThemeContext';
-import Basic from '@src/screens/basic/Basic';
+import ThemeContext from '@contexts/ThemeContext';
+import Basic from '@screens/basic/Basic';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 const TopTab = createMaterialTopTabNavigator<TabParamList>();

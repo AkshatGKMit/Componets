@@ -1,10 +1,10 @@
 import { Animated, StyleSheet, Text } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import BottomTabNavigator from './BottomTabNavigator';
-import Settings from '@src/screens/settings/Settings';
-import COLORS from '@src/constants/colors';
+import Settings from '@screens/settings/Settings';
+import COLORS from '@constants/colors';
 import { useContext } from 'react';
-import SettingsContext from '@src/contexts/SettingsContext';
+import SettingsContext from '@contexts/SettingsContext';
 import TopTabNavigator from './TopTabNavigator';
 import StackNavigator from './StackNavigator';
 

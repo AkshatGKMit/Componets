@@ -1,6 +1,6 @@
 import { View, Text, Button } from 'react-native';
 import React from 'react';
-import globalStyles from '@src/styles/global';
+import globalStyles from '@styles/global';
 import { useNavigation } from '@react-navigation/native';
 
 export const Page1 = () => {

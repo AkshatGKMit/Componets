@@ -1,5 +1,5 @@
-import { defaultThemeContextValues } from '@src/constants/context';
-import ThemeColors from '@src/themes/themes';
+import { defaultThemeContextValues } from '@constants/context';
+import ThemeColors from '@themes/themes';
 import { createContext, useEffect, useState } from 'react';
 import { Appearance, useColorScheme } from 'react-native';
 

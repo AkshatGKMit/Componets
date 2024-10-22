@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity, ScrollView, DeviceEventEmitter } from 're
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './styles';
 import Icon from '../icon';
-import COLORS, { DARK } from '@src/constants/colors';
+import COLORS, { DARK } from '@constants/colors';
 import uuid from 'react-native-uuid';
 import { Screen } from 'react-native-screens';
 import { Gesture, GestureDetector, PanGestureHandler } from 'react-native-gesture-handler';

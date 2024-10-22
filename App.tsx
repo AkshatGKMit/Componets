@@ -2,9 +2,9 @@ import React, { useContext } from 'react';
 import { SafeAreaView, StatusBar } from 'react-native';
 import Navigator from '@navigation/Navigator';
 import { NavigationContainer, useTheme } from '@react-navigation/native';
-import globalStyles from '@src/styles/global';
-import ThemeContext, { ThemeContextProvider } from '@src/contexts/ThemeContext';
-import { SettingsContextProvider } from '@src/contexts/SettingsContext';
+import globalStyles from '@styles/global';
+import ThemeContext, { ThemeContextProvider } from '@contexts/ThemeContext';
+import { SettingsContextProvider } from '@contexts/SettingsContext';
 
 const App = (): React.JSX.Element => {
   return (

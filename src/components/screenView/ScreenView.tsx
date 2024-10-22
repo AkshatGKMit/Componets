@@ -1,4 +1,4 @@
-import globalStyles from '@src/styles/global';
+import globalStyles from '@styles/global';
 import { View, TouchableNativeFeedback, ScrollView, DeviceEventEmitter, Keyboard } from 'react-native';
 
 const ScreenView = ({ firingEvent, children, style }: ScreenViewProps) => {
