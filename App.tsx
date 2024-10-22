@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
-import { SafeAreaView, StatusBar } from 'react-native';
+import React, { useContext, useEffect } from 'react';
+import { Linking, SafeAreaView, StatusBar } from 'react-native';
 import Navigator from '@navigation/Navigator';
-import { NavigationContainer, useTheme } from '@react-navigation/native';
+import { LinkingOptions, NavigationContainer, useNavigation, useTheme } from '@react-navigation/native';
 import globalStyles from '@styles/global';
 import ThemeContext, { ThemeContextProvider } from '@contexts/ThemeContext';
 import { SettingsContextProvider } from '@contexts/SettingsContext';
@@ -16,6 +16,21 @@ const App = (): React.JSX.Element => {
   );
 };
 
+const linking: LinkingOptions<DrawerParamList> = {
+  prefixes: ['components://'],
+  config: {
+    screens: {
+      StackScreens: {
+        screens: {
+          Page1: 'page1',
+          Page2: 'page2',
+          Page3: 'page3',
+        },
+      },
+    },
+  },
+};
+
 const Main = () => {
   const { isDark } = useContext(ThemeContext);
 
@@ -27,7 +42,7 @@ const Main = () => {
         animated
       />
       <SafeAreaView style={globalStyles().screen}>
-        <NavigationContainer>
+        <NavigationContainer linking={linking}>
           <Navigator />
         </NavigationContainer>
       </SafeAreaView>

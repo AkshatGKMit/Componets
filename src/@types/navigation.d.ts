@@ -1,14 +1,14 @@
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { DrawerScreenProps } from '@react-navigation/drawer';
 import { MaterialTopTabBarProps } from '@react-navigation/material-top-tabs';
-import { NavigationProp } from '@react-navigation/native';
+import { NavigationProp, NavigatorScreenParams } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 declare global {
   type DrawerParamList = {
-    MainTab: undefined;
+    MainTab: NavigatorScreenParams<TabParamList>;
     Settings: undefined;
-    StackScreens: undefined;
+    StackScreens: NavigatorScreenParams<StackParamList>;
   };
 
   type TabParamList = {
