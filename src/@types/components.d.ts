@@ -9,6 +9,12 @@ declare global {
     onPressIn?: (ev?: GestureResponderEvent) => void;
     onPressOut?: (ev?: GestureResponderEvent) => void;
   };
+
+  type ScreenViewProps = {
+    firingEvent?: EventType[];
+    children?: React.ReactNode;
+    style?: StyleProp<ViewStyle>;
+  };
 }
 
 export {};
