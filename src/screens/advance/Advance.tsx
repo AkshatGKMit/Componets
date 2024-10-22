@@ -12,6 +12,10 @@ const Advance = () => {
         title="Pagination"
         onPress={() => navigate(Routes.AdvanceStack.Pagination)}
       />
+      <Button
+        title="Dynamic Tabs"
+        onPress={() => navigate(Routes.AdvanceStack.MainDynamicTabs)}
+      />
     </View>
   );
 };
