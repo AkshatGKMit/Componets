@@ -1,5 +1,5 @@
 import globalStyles from '@styles/global';
-import { View, TouchableNativeFeedback, ScrollView, DeviceEventEmitter, Keyboard } from 'react-native';
+import { View, DeviceEventEmitter, Keyboard, TouchableWithoutFeedback } from 'react-native';
 
 const ScreenView = ({ firingEvent, children, style }: ScreenViewProps) => {
   const emitEvent = () => {
@@ -12,9 +12,9 @@ const ScreenView = ({ firingEvent, children, style }: ScreenViewProps) => {
   };
 
   return (
-    <TouchableNativeFeedback onPress={emitEvent}>
+    <TouchableWithoutFeedback onPress={emitEvent}>
       <View style={[globalStyles().screen, style]}>{children}</View>
-    </TouchableNativeFeedback>
+    </TouchableWithoutFeedback>
   );
 };
 
