@@ -16,6 +16,7 @@ export const defaultDynamicTabContextValues: DynamicTabCtxProps = {
       songs: { results: [] },
     },
   },
-  search: () => {},
+  search: async () => {},
+  success: false,
   falseSuccess: () => {},
 };

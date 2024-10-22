@@ -5,10 +5,12 @@ import { createContext, useState } from 'react';
 const DynamicTabContext = createContext(defaultDynamicTabContextValues);
 
 export const DynamicTabContextProvider = ({ children }: CtxProviderProps) => {
-  const [success, setSuccess] = useState(defaultDynamicTabContextValues.globalSearch.success);
+  const [success, setSuccess] = useState(defaultDynamicTabContextValues.success);
   const [globalSearch, setGlobalSearch] = useState(defaultDynamicTabContextValues.globalSearch);
 
   const search = async (text: string) => {
+    console.warn(text);
+
     const response = await ApiCall<GlobalSearch, GlobalSearchParams>({
       method: 'GET',
       url: 'https://saavn.dev/api/search',
@@ -18,6 +20,8 @@ export const DynamicTabContextProvider = ({ children }: CtxProviderProps) => {
     });
 
     if (response.success) {
+      console.log(response.responseData);
+
       setSuccess(true);
       setGlobalSearch(response.responseData);
     } else {
@@ -27,7 +31,7 @@ export const DynamicTabContextProvider = ({ children }: CtxProviderProps) => {
 
   const falseSuccess = () => setSuccess(false);
 
-  const ctxValues = { globalSearch, search, falseSuccess };
+  const ctxValues = { globalSearch, search, success, falseSuccess };
   return <DynamicTabContext.Provider value={ctxValues}>{children}</DynamicTabContext.Provider>;
 };
 

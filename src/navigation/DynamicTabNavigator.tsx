@@ -6,52 +6,30 @@ import BottomTabsHeader from '@components/header';
 import Basic from '@screens/basic/Basic';
 import Routes from '@constants/routes';
 import AdvanceStackNavigator from './AdvanceStackNavigator';
+import DynamicTabContext from '@contexts/DynamicTabContext';
+import DynamicTabScreen from '@screens/dynamicTabScreen/DynamicTabScreen';
 
-const BottomTab = createBottomTabNavigator<RootTabParamList>();
+const DynamicTab = createBottomTabNavigator<RootDynamicTabScreenParamList>();
 
 const DynamicTabNavigator = (): React.JSX.Element => {
   const { theme } = useContext(ThemeContext);
 
+  const {
+    globalSearch: { data },
+  } = useContext(DynamicTabContext);
+
   return (
-    <BottomTab.Navigator
-      screenOptions={{
-        tabBarHideOnKeyboard: true,
-        freezeOnBlur: true,
-        tabBarShowLabel: false,
-        tabBarInactiveBackgroundColor: theme.tabBarBGColor,
-        tabBarActiveBackgroundColor: theme.tabBarBGColor,
-        header: headerProps => <BottomTabsHeader {...headerProps} />,
-      }}
-    >
-      <BottomTab.Screen
-        name={Routes.Tabs.Basic}
-        component={Basic}
-        options={{
-          tabBarIcon: ({ focused, size }) => (
-            <Icon
-              family="FontAwesome"
-              name="home"
-              color={focused ? theme.tabBarFocusedColor : theme.tabBarUnfocusedColor}
-              size={size}
-            />
-          ),
-        }}
-      />
-      <BottomTab.Screen
-        name={Routes.Tabs.MainAdvance}
-        component={AdvanceStackNavigator}
-        options={{
-          tabBarIcon: ({ focused, size }) => (
-            <Icon
-              family="Fontisto"
-              name="person"
-              color={focused ? theme.tabBarFocusedColor : theme.tabBarUnfocusedColor}
-              size={size}
-            />
-          ),
-        }}
-      />
-    </BottomTab.Navigator>
+    <DynamicTab.Navigator>
+      {Object.keys(data)
+        .filter(key => data[key].results.length > 0)
+        .map((key, index) => (
+          <DynamicTab.Screen
+            key={index}
+            name={key}
+            children={() => <DynamicTabScreen data={data[key].results} />}
+          />
+        ))}
+    </DynamicTab.Navigator>
   );
 };
 

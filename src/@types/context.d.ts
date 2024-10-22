@@ -18,7 +18,8 @@ declare global {
 
   interface DynamicTabCtxProps {
     globalSearch: GlobalSearch;
-    search: (text: string) => void;
+    search: (text: string) => Promise<void>;
+    success: boolean;
     falseSuccess: () => void;
   }
 }
