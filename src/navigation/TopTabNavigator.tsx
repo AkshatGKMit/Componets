@@ -4,8 +4,9 @@ import { useContext } from 'react';
 import ThemeContext from '@contexts/ThemeContext';
 import Basic from '@screens/basic/Basic';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import Routes from '@constants/routes';
 
-const TopTab = createMaterialTopTabNavigator<TabParamList>();
+const TopTab = createMaterialTopTabNavigator<RootTabParamList>();
 
 const TopTabNavigator = (): React.JSX.Element => {
   const { theme } = useContext(ThemeContext);
@@ -13,7 +14,7 @@ const TopTabNavigator = (): React.JSX.Element => {
   return (
     <TopTab.Navigator>
       <TopTab.Screen
-        name="Basic"
+        name={Routes.Tabs.Basic}
         component={Basic}
         options={{
           tabBarIcon: ({ focused }) => (
@@ -27,7 +28,7 @@ const TopTabNavigator = (): React.JSX.Element => {
         }}
       />
       <TopTab.Screen
-        name="Advance"
+        name={Routes.Tabs.Advance}
         component={Advance}
         options={{
           tabBarIcon: ({ focused }) => (

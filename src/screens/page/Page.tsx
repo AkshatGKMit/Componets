@@ -4,7 +4,7 @@ import globalStyles from '@styles/global';
 import { useNavigation } from '@react-navigation/native';
 
 export const Page1 = () => {
-  const Navigation = useNavigation<Page1ScreenParamList>();
+  const Navigation = useNavigation<PageStackScreenNavigation>();
 
   return (
     <View style={[globalStyles().screen, globalStyles().flexColumn]}>
@@ -24,7 +24,7 @@ export const Page1 = () => {
 };
 
 export const Page2 = () => {
-  const Navigation = useNavigation<Page2ScreenParamList>();
+  const Navigation = useNavigation<PageStackScreenNavigation>();
 
   return (
     <View style={[globalStyles().screen, globalStyles().flexColumn]}>
@@ -42,7 +42,7 @@ export const Page2 = () => {
 };
 
 export const Page3 = () => {
-  const Navigation = useNavigation<Page3ScreenParamList>();
+  const Navigation = useNavigation<PageStackScreenNavigation>();
 
   return (
     <View style={[globalStyles().screen, globalStyles().flexColumn]}>

@@ -5,8 +5,9 @@ import { useContext } from 'react';
 import ThemeContext from '@contexts/ThemeContext';
 import BottomTabsHeader from '@components/header';
 import Basic from '@screens/basic/Basic';
+import Routes from '@constants/routes';
 
-const BottomTab = createBottomTabNavigator<TabParamList>();
+const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
 const BottomTabNavigator = (): React.JSX.Element => {
   const { theme } = useContext(ThemeContext);
@@ -23,7 +24,7 @@ const BottomTabNavigator = (): React.JSX.Element => {
       }}
     >
       <BottomTab.Screen
-        name="Basic"
+        name={Routes.Tabs.Basic}
         component={Basic}
         options={{
           tabBarIcon: ({ focused, size }) => (
@@ -37,7 +38,7 @@ const BottomTabNavigator = (): React.JSX.Element => {
         }}
       />
       <BottomTab.Screen
-        name="Advance"
+        name={Routes.Tabs.Advance}
         component={Advance}
         options={{
           tabBarIcon: ({ focused, size }) => (

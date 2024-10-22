@@ -7,8 +7,9 @@ import { useContext } from 'react';
 import SettingsContext from '@contexts/SettingsContext';
 import TopTabNavigator from './TopTabNavigator';
 import StackNavigator from './StackNavigator';
+import Routes from '@constants/routes';
 
-const Drawer = createDrawerNavigator<DrawerParamList>();
+const Drawer = createDrawerNavigator<RootDrawerParamList>();
 
 const Navigator = (): React.JSX.Element => {
   const { isBottomTab } = useContext(SettingsContext);
@@ -16,7 +17,7 @@ const Navigator = (): React.JSX.Element => {
   return (
     <Drawer.Navigator>
       <Drawer.Screen
-        name="MainTab"
+        name={Routes.Drawer.MainTab}
         component={isBottomTab ? BottomTabNavigator : TopTabNavigator}
         options={{
           headerShown: false,
@@ -24,11 +25,11 @@ const Navigator = (): React.JSX.Element => {
         }}
       />
       <Drawer.Screen
-        name="Settings"
+        name={Routes.Drawer.Settings}
         component={Settings}
       />
       <Drawer.Screen
-        name="StackScreens"
+        name={Routes.Drawer.StackScreens}
         component={StackNavigator}
       />
     </Drawer.Navigator>
