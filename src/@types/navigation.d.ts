@@ -17,4 +17,8 @@ declare global {
   type PageStackScreenNames = keyof typeof Routes.PageStack;
   type RootPageStackScreenParamList = Record<PageStackScreenNames[number], undefined>;
   type PageStackScreenNavigation = NavigationProp<RootPageStackScreenParamList>;
+
+  type AdvanceStackScreenNames = keyof typeof Routes.AdvanceStack;
+  type RootAdvanceStackScreenParamList = Record<AdvanceStackScreenNames[number], undefined>;
+  type AdvanceStackScreenNavigation = NavigationProp<RootAdvanceStackScreenParamList>;
 }
