@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
   },
   dropdownList: {
     top: 55,
+    minWidth: '100%',
     paddingHorizontal: 10,
     elevation: 2,
     borderWidth: 0.1,
@@ -41,6 +42,7 @@ const styles = StyleSheet.create({
     paddingRight: 25,
   },
   dataText: {
+    flex: 1,
     color: COLORS.black.shade950,
     fontSize: 16,
   },
