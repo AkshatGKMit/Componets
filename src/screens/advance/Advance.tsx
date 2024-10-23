@@ -10,7 +10,7 @@ const Advance = () => {
 
   const { search, falseSuccess, success } = useContext(DynamicTabContext);
 
-  const [text, setText] = useState('Believer');
+  const [text, setText] = useState('Top Hits');
 
   return (
     <View style={[globalStyles().screen, globalStyles().flexColumn]}>

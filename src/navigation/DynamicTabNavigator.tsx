@@ -1,4 +1,4 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { BottomTabBarProps, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from '@components/icon';
 import { useContext, useLayoutEffect } from 'react';
 import ThemeContext from '@contexts/ThemeContext';
@@ -9,6 +9,7 @@ import AdvanceStackNavigator from './AdvanceStackNavigator';
 import DynamicTabContext from '@contexts/DynamicTabContext';
 import DynamicTabScreen from '@screens/dynamicTabScreen/DynamicTabScreen';
 import { useNavigation, useRoute, RouteProp, getFocusedRouteNameFromRoute } from '@react-navigation/native';
+import FloatingDynamicTabs from '@components/customDynamicTabs';
 
 const DynamicTab = createBottomTabNavigator<RootDynamicTabScreenParamList>();
 
@@ -19,8 +20,18 @@ const DynamicTabNavigator = (): React.JSX.Element => {
     globalSearch: { data },
   } = useContext(DynamicTabContext);
 
+  const { Albums, Artists, Playlists, Songs, TopQuery } = Routes.DynamicTabs;
+
+  const getTabName = (key: string): keyof typeof Routes.DynamicTabs => {
+    if (key === 'songs') return Songs;
+    else if (key === 'artists') return Artists;
+    else if (key === 'albums') return Albums;
+    else if (key === 'topQuery') return TopQuery;
+    else return Playlists;
+  };
+
   return (
-    <DynamicTab.Navigator>
+    <DynamicTab.Navigator tabBar={(props: BottomTabBarProps) => <FloatingDynamicTabs {...props} />}>
       {Object.keys(data)
         .filter(key => data[key].results.length > 0)
         .map((key, index) => {
@@ -28,34 +39,10 @@ const DynamicTabNavigator = (): React.JSX.Element => {
           return (
             <DynamicTab.Screen
               key={index}
-              name={key}
+              name={getTabName(key)}
               children={() => <DynamicTabScreen data={tab.results} />}
               options={{
                 tabBarShowLabel: false,
-                tabBarIcon: ({ focused, color }) => {
-                  const icon = (): string => {
-                    switch (key) {
-                      case 'songs':
-                        return 'music-note';
-                      case 'artists':
-                        return 'person';
-                      case 'albums':
-                        return 'album';
-                      case 'playlists':
-                        return 'playlist-music';
-                      default:
-                        return 'check-box-outline-blank';
-                    }
-                  };
-                  return (
-                    <Icon
-                      family="MaterialIcons"
-                      name={icon()}
-                      size={30}
-                      color={focused ? color : '#000'}
-                    />
-                  );
-                },
               }}
             />
           );

@@ -16,7 +16,7 @@ const App = (): React.JSX.Element => {
   );
 };
 
-const linking: LinkingOptions<DrawerParamList> = {
+const linking: LinkingOptions<RootDrawerParamList> = {
   prefixes: ['components://'],
   config: {
     screens: {

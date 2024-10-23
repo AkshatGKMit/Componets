@@ -8,7 +8,7 @@ const Routes = {
     MainDynamicTabs: 'MainDynamicTabs',
     FormHandling: 'FormHandling',
   },
-  DynamicTabs: { Songs: 'Songs', Albums: 'Albums', Artists: 'Artists', Playlists: 'Playlists' },
+  DynamicTabs: { Songs: 'Songs', Albums: 'Albums', Artists: 'Artists', Playlists: 'Playlists', TopQuery: 'TopQuery' },
 } as const;
 
 export default Routes;
