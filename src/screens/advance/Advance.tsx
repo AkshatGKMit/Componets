@@ -18,6 +18,10 @@ const Advance = () => {
         title="Pagination"
         onPress={() => navigate(Routes.AdvanceStack.Pagination)}
       />
+      <Button
+        title="Form Handling"
+        onPress={() => navigate(Routes.AdvanceStack.FormHandling)}
+      />
       <View style={[globalStyles().flexRow, { height: 50, width: '100%', gap: 20 }]}>
         <TextInput
           style={{ flex: 1, borderWidth: 0.5, borderColor: 'black', height: '100%' }}

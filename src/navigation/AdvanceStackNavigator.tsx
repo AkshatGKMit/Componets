@@ -4,6 +4,7 @@ import Advance from '@screens/advance/Advance';
 import Pagination from '@screens/pagination/Pagination';
 import DynamicTabNavigator from './DynamicTabNavigator';
 import { DynamicTabContextProvider } from '@contexts/DynamicTabContext';
+import FormHandling from '@screens/formHandling/FormHandling';
 
 const Stack = createNativeStackNavigator<RootAdvanceStackScreenParamList>();
 
@@ -22,6 +23,10 @@ const AdvanceStackNavigator = () => {
         <Stack.Screen
           name={Routes.AdvanceStack.Pagination}
           component={Pagination}
+        />
+        <Stack.Screen
+          name={Routes.AdvanceStack.FormHandling}
+          component={FormHandling}
         />
       </Stack.Navigator>
     </DynamicTabContextProvider>
